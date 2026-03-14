@@ -2,6 +2,9 @@
 
 This project serves as a practical demonstration of a phishing attack for educational and awareness purposes. It contains a realistic (but completely safe) fake Microsoft login page and a Python server to track interactions without stealing data.
 
+**🔴 Live Demo:** [https://microsoft-account-protection-hub.vercel.app](https://microsoft-account-protection-hub.vercel.app)
+*(Note: Enter any fake email. The password field is deliberately ignored for ethical purposes.)*
+
 ## Prerequisites
 
 - Python 3.x installed on your computer.
