@@ -1,0 +1,20 @@
+=== Phishing Simulation Log ===
+[2026-02-24 02:07:58] PAGE_VISIT | IP: 127.0.0.1 | Details: User visited the fake login page
+[2026-02-24 02:08:20] PAGE_VISIT | IP: 127.0.0.1 | Details: User visited the fake login page
+[2026-02-24 02:08:27] SUBMIT_CREDENTIALS | IP: 127.0.0.1 | Details: User attempted to login with email: 7675456734 (Password ignored)
+[2026-02-24 02:11:03] PAGE_VISIT | IP: 127.0.0.1 | Details: User visited the fake login page
+[2026-02-24 02:11:55] PAGE_VISIT | IP: 127.0.0.1 | Details: User visited the fake login page
+[2026-02-24 02:13:52] PAGE_VISIT | IP: 127.0.0.1 | Details: User visited the fake login page
+[2026-02-24 02:14:22] PAGE_VISIT | IP: 127.0.0.1 | Details: User visited the fake login page
+[2026-02-24 02:16:24] PAGE_VISIT | IP: 127.0.0.1 | Details: User visited the fake login page
+[2026-02-24 02:38:44] PAGE_VISIT | IP: 127.0.0.1 | Details: User visited the fake login page
+[2026-02-24 02:38:57] PAGE_VISIT | IP: 127.0.0.1 | Details: User visited the fake login page
+[2026-02-24 02:39:56] PAGE_VISIT | IP: 127.0.0.1 | Details: User visited the fake login page
+[2026-02-24 02:40:11] PAGE_VISIT | IP: 127.0.0.1 | Details: User visited the fake login page
+[2026-02-24 02:40:46] PAGE_VISIT | IP: 127.0.0.1 | Details: User visited the fake login page
+[2026-02-24 02:41:04] SUBMIT_CREDENTIALS | IP: 127.0.0.1 | Details: User attempted to login with email: 9878677867 (Password ignored)
+[2026-02-25 17:23:27] PAGE_VISIT | IP: 127.0.0.1 | Details: User visited the fake login page
+[2026-02-25 17:23:50] SUBMIT_CREDENTIALS | IP: 127.0.0.1 | Details: User attempted to login with email: asdg@gmail.com (Password ignored)
+[2026-03-14 23:04:49] PAGE_VISIT | IP: 192.168.0.100 | Details: User visited the fake login page
+[2026-03-14 23:05:15] PAGE_VISIT | IP: 127.0.0.1 | Details: User visited the fake login page
+[2026-03-15 00:40:05] PAGE_VISIT | IP: 127.0.0.1 | Details: User visited the fake login page
