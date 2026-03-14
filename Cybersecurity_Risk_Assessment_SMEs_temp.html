@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Minor Project 2 Report</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<style>
+    @page {
+        margin: 20mm 25mm !important;
+        size: A4;
+    }
+    body {
+        font-family: 'Segoe UI', Calibri, Arial, sans-serif !important;
+        font-size: 11pt !important;
+        line-height: 1.5 !important;
+        color: #000000 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        text-align: justify !important;
+    }
+    #content {
+        padding: 0 !important;
+    }
+    h1 { 
+        font-size: 24pt !important; 
+        color: #305496 !important; 
+        margin-top: 0 !important; 
+        margin-bottom: 2pt !important;
+        text-align: left !important;
+        font-weight: bold !important;
+    }
+    .header-divider {
+        border: none !important;
+        border-top: 1px solid #d9d9d9 !important;
+        margin: 0 0 25pt 0 !important;
+        height: 0 !important;
+    }
+    h2 { 
+        font-size: 18pt !important; 
+        color: #305496 !important; 
+        margin-top: 20pt !important; 
+        margin-bottom: 12pt !important;
+        font-weight: bold !important;
+    }
+    h3 { 
+        font-size: 14pt !important; 
+        color: #305496 !important; 
+        margin-top: 15pt !important; 
+        margin-bottom: 8pt !important;
+        font-weight: bold;
+    }
+    p, li { 
+        margin-bottom: 10pt !important;
+        text-align: justify !important;
+    }
+    ul, ol {
+        margin-left: 20pt !important;
+        margin-bottom: 15pt !important;
+    }
+    pre {
+        background: #f9f9f9 !important;
+        border: 1px solid #eee !important;
+        padding: 10pt !important;
+        font-size: 9pt !important;
+        font-family: Consolas, monospace !important;
+        white-space: pre-wrap !important;
+        margin: 15pt 0 !important;
+        text-align: left !important;
+    }
+    code {
+        background: #f4f4f4 !important;
+        padding: 1pt 3pt !important;
+        font-family: Consolas, monospace !important;
+        font-size: 9.5pt !important;
+        color: #000 !important;
+    }
+    pre code { background: none !important; padding: 0 !important; }
+    table {
+        border-collapse: collapse !important;
+        width: 100% !important;
+        margin: 20pt 0 !important;
+        font-size: 10pt !important;
+        text-align: left !important;
+    }
+    td, th {
+        border: 1px solid #bfbfbf !important;
+        padding: 8pt 10pt !important;
+    }
+    thead tr, tr:first-child { 
+        background: #f2f2f2 !important; 
+        color: #305496 !important; 
+        font-weight: bold !important;
+    }
+    .mermaid { 
+        margin: 25pt 0 !important; 
+        text-align: center !important; 
+    }
+    hr {
+        border: none !important;
+        border-top: 1px solid #d9d9d9 !important;
+        margin: 20pt 0 !important;
+    }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>SME Cybersecurity Risk Assessment - Minor Project 1</h1>
+<h2>1. WHY THIS MATTERS</h2>
+<p>Cybersecurity isn&#39;t just a &quot;big tech&quot; problem anymore. I chose to focus on Small and Medium Enterprises (SMEs) because they&#39;re often the easiest targets. They usually don&#39;t have a massive IT budget or a dedicated security team, which makes them sitting ducks for basic attacks.</p>
+<p>The idea behind this project was to create a simple, working way for a small business to figure out where they&#39;re vulnerable without needing to hire an expensive consultant.</p>
+<h3>1.1 The Most Common Threats I Found</h3>
+<p>During my research, I noticed that hackers don&#39;t usually use &quot;movie-style&quot; high-tech tricks on small businesses. Instead, they stick to what works:</p>
+<ul>
+<li><strong>Phishing:</strong> Just sending fake emails to trick people into giving up passwords. It&#39;s the #1 way businesses get hacked because it’s easy to do.</li>
+<li><strong>Ransomware:</strong> This is the nightmare scenario where all company files get locked up and the hackers demand money to release them.</li>
+<li><strong>Bad Habits/Insider Errors:</strong> Sometimes it&#39;s just an employee using a weak password or someone accidentally deleting a sensitive database because they weren&#39;t trained.</li>
+<li><strong>Old Software:</strong> Many small shops use &quot;legacy&quot; systems that haven&#39;t been updated in years. These have known holes that hackers scan for automatically.</li>
+</ul>
+<hr>
+<h2>2. HOW I BUILT THE MODEL</h2>
+<p>I looked at the NIST Cybersecurity Framework, which is the industry gold standard. It&#39;s way too complicated for a small shop to use as-is, so I stripped it down to the basics.</p>
+<h3>2.1 The Simplified Process</h3>
+<ol>
+<li><strong>IDENTIFY:</strong> Know what you have (servers, laptops, customer data).</li>
+<li><strong>PROTECT:</strong> Lock the doors (firewalls, passwords).</li>
+<li><strong>DETECT:</strong> Setting up alarms so you know if someone is inside your network.</li>
+<li><strong>RESPOND:</strong> Knowing exactly what to do the second you find a breach.</li>
+<li><strong>RECOVER:</strong> How to get back to work without losing everything.</li>
+</ol>
+<h3>2.2 The Risk Score Formula</h3>
+<p>To make this practical, I used a basic math formula:
+<strong>Risk Score = How likely it is to happen × How bad it would be if it did</strong></p>
+<p>I used a scale of 1 to 5 for both.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Score</th>
+<th align="left">Likelihood (How often?)</th>
+<th align="left">Impact (How bad?)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>1</strong></td>
+<td align="left">Barely ever (once a year)</td>
+<td align="left">Not a big deal</td>
+</tr>
+<tr>
+<td align="left"><strong>2</strong></td>
+<td align="left">Might happen twice a year</td>
+<td align="left">Small headache (1hr downtime)</td>
+</tr>
+<tr>
+<td align="left"><strong>3</strong></td>
+<td align="left">Likely once a quarter</td>
+<td align="left">Actually hurts (data loss)</td>
+</tr>
+<tr>
+<td align="left"><strong>4</strong></td>
+<td align="left">Happens monthly</td>
+<td align="left">Serious trouble (fines/client loss)</td>
+</tr>
+<tr>
+<td align="left"><strong>5</strong></td>
+<td align="left">Happens all the time</td>
+<td align="left">Business-ending event</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>3. REAL EXAMPLES I TESTED</h2>
+<p>I ran the numbers against two common situations:</p>
+<h3>3.1 The Accountant Phishing Case</h3>
+<p>A local accounting firm had an email password stolen.</p>
+<ul>
+<li><strong>The Score:</strong> This was a <strong>High Risk (16)</strong> because it&#39;s so common.</li>
+<li><strong>The Fix:</strong> Adding MFA (Multi-Factor Authentication) would have stopped the hacker, even with the right password.</li>
+</ul>
+<h3>3.2 The Clinic Ransomware Case</h3>
+<p>A dental clinic&#39;s IT provider got hacked, which spread to the clinic.</p>
+<ul>
+<li><strong>The Score:</strong> This was a <strong>Moderate Risk (10)</strong>.</li>
+<li><strong>The Fix:</strong> They had a &quot;3-2-1&quot; backup (offsite and offline), so they just wiped the PCs and restored everything for free.</li>
+</ul>
+<hr>
+<h2>4. THE CALCULATOR TOOL (PYTHON)</h2>
+<p>I didn&#39;t want this to just be a paper project. I wrote a Python script (<code>risk_calculator.py</code>) that actually does the math for you. You can feed it different threats, and it&#39;ll tell you if it&#39;s &quot;Low&quot;, &quot;Moderate&quot;, or &quot;High&quot; priority. It also creates a CSV file that you can show to a manager.</p>
+<p><strong>Run it with:</strong> <code>python risk_calculator.py</code></p>
+<hr>
+<h2>5. THE WEB DASHBOARD</h2>
+<p>For people who don&#39;t like using a terminal, I built a web interface (<code>index.html</code>). It&#39;s basically a visual dashboard for the project. You can move sliders around to see how risk levels change in real-time. I spent extra time making sure the &quot;Dark Mode&quot; looks clean and professional.</p>
+<p><strong>Edit:</strong> I had some issues with dropdown visibility in the first version, but I&#39;ve updated the CSS so it works perfectly now.</p>
+<hr>
+<h2>6. PROJECT FILES</h2>
+<table>
+<thead>
+<tr>
+<th align="left">File</th>
+<th align="left">What it does</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong><code>Cybersecurity_Risk_Assessment_SMEs.md</code></strong></td>
+<td align="left">This main report.</td>
+</tr>
+<tr>
+<td align="left"><strong><code>risk_calculator.py</code></strong></td>
+<td align="left">The Python logic and reporting tool.</td>
+</tr>
+<tr>
+<td align="left"><strong><code>index.html</code></strong></td>
+<td align="left">The interactive dashboard front-end.</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>7. TOP WAYS TO STAY SAFE</h2>
+<p>Based on my research, most small businesses can be &quot;safe enough&quot; if they just do these four things:</p>
+<ol>
+<li><strong>Use MFA everywhere.</strong> No exceptions.</li>
+<li><strong>The 3-2-1 Backup.</strong> 3 copies, 2 media types, 1 offsite.</li>
+<li><strong>Patch your stuff.</strong> Set everything to &quot;Auto-Update&quot;.</li>
+<li><strong>Train your team.</strong> Most hacks start with a human error, not a computer error.</li>
+</ol>
+<hr>
+<h2>8. MY TAKEAWAY</h2>
+<p>The big lesson here is that you can&#39;t stop every hack. You have to assume you&#39;ll get hit eventually. The goal of this project was to show that by being smart with a simple risk matrix and basic tools, even a tiny business can be tougher to hack than a big bank.</p>
+
+</div>
+<script>
+    mermaid.initialize({ 
+        startOnLoad: true, 
+        theme: 'base',
+        themeVariables: {
+            primaryColor: '#ffffff',
+            primaryTextColor: '#305496',
+            primaryBorderColor: '#305496',
+            lineColor: '#555555',
+            secondaryColor: '#fcfcfc',
+            tertiaryColor: '#ffffff'
+        }
+    });
+    document.querySelectorAll('h1').forEach((el, index) => {
+        if (index === 0) {
+            const hr = document.createElement('hr');
+            hr.className = 'header-divider';
+            el.after(hr);
+        }
+    });
+    document.querySelectorAll('pre code.language-mermaid').forEach(el => {
+        const pre = el.parentElement;
+        const div = document.createElement('div');
+        div.className = 'mermaid';
+        div.textContent = el.textContent;
+        pre.replaceWith(div);
+    });
+</script>
+</body>
+</html>
