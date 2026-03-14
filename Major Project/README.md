@@ -36,9 +36,6 @@ This project serves as a practical demonstration of a phishing attack for educat
    - As users click the link or attempt to log in, the server will safely record the events in a new file named `interactions.log`.
    - **Crucial:** The server deliberately ignores the password field. It only logs the interaction type, IP, and the submitted email address to prove the simulated compromise.
 
-5. **Write the Report:**
-   - Use the data gathered in `interactions.log` and the template in `report_template.md` to finalize your project report.
-
 ## Ethical Disclaimer
 
 This project is strictly for **educational purposes** and authorized simulations only. Never use these tools to deceive individuals outside of a controlled, consented environment. All collected data should be handled responsibly.
