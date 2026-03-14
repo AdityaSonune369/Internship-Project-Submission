@@ -13,19 +13,6 @@ Small and Medium Enterprises (SMEs) are increasingly becoming the primary target
 
 ---
 
-## TABLE OF CONTENTS
-1. [Introduction](#1-introduction)
-2. [Background & Problem Statement](#2-background--problem-statement)
-3. [Project Objectives](#3-project-objectives)
-4. [Proposed Methodology](#4-proposed-methodology)
-5. [Risk Assessment Analysis](#5-risk-assessment-analysis)
-6. [Technical Implementation](#6-technical-implementation)
-7. [Case Study Analysis](#7-case-study-analysis)
-8. [Detailed Mitigation Strategies](#8-detailed-mitigation-strategies)
-9. [Conclusion & Future Scope](#9-conclusion--future-scope)
-
----
-
 ## 1. INTRODUCTION
 
 Cybersecurity has evolved from a technical "add-on" to a fundamental pillar of business continuity. While massive data breaches at global corporations dominate the headlines, the reality is that 43% of cyber-attacks target small businesses. These organizations often serve as an entry point for larger supply chain hacks.
@@ -35,30 +22,33 @@ During this project, I focused on creating a "Minimum Viable Security" framework
 ## 2. BACKGROUND & PROBLEM STATEMENT
 
 ### 2.1 The SME Security Paradox
-SMEs are in a difficult position: they handle sensitive customer data and financial transactions, but they lack the $100k+ budgets required to implement "Gold Standard" security (like ISO 27001). 
+
+SMEs are in a difficult position: they handle sensitive customer data and financial transactions, but they lack the $100k+ budgets required to implement "Gold Standard" security (like ISO 27001).
 
 ### 2.2 Core Internal Challenges
-*   **Budget Constraints:** Security is seen as a cost center rather than an investment.
-*   **Personnel Gaps:** Over 60% of SMEs do not have a dedicated IT security professional.
-*   **Phusing & Social Engineering:** Employee error remains the largest vulnerability, yet training is often non-existent.
+
+* **Budget Constraints:** Security is seen as a cost center rather than an investment.
+* **Personnel Gaps:** Over 60% of SMEs do not have a dedicated IT security professional.
+* **Phusing & Social Engineering:** Employee error remains the largest vulnerability, yet training is often non-existent.
 
 ## 3. PROJECT OBJECTIVES
 
 My project aimed to achieve four specific technical and strategic milestones:
-1.  **Quantitative Evaluation:** Moving away from "vague" security advice to hard numbers.
-2.  **Affordable Automation:** Building a tool (Python) that replaces the need for a manual security audit for baseline checks.
-3.  **Human-Centric Interface:** Designing a dashboard that makes complex risk scores easy to understand for managers.
-4.  **Actionable Roadmap:** Providing a step-by-step guide to fixing the most "Critical" risks first.
+
+1. **Quantitative Evaluation:** Moving away from "vague" security advice to hard numbers.
+2. **Affordable Automation:** Building a tool (Python) that replaces the need for a manual security audit for baseline checks.
+3. **Human-Centric Interface:** Designing a dashboard that makes complex risk scores easy to understand for managers.
+4. **Actionable Roadmap:** Providing a step-by-step guide to fixing the most "Critical" risks first.
 
 ## 4. PROPOSED METHODOLOGY
 
 The framework is built on the Five Core Functions of the **NIST Cybersecurity Framework (CSF)**:
 
-*   **IDENTIFY:** Inventorying all digital assets (laptops, cloud accounts, customer databases).
-*   **PROTECT:** Implementing controls like MFA and air-gapped backups.
-*   **DETECT:** Setting up basic logging to see unauthorized login attempts.
-*   **RESPOND:** Creating an "Incident Response" checklist for when things go wrong.
-*   **RECOVER:** Testing backups to ensure the business can be restored in under 4 hours.
+* **IDENTIFY:** Inventorying all digital assets (laptops, cloud accounts, customer databases).
+* **PROTECT:** Implementing controls like MFA and air-gapped backups.
+* **DETECT:** Setting up basic logging to see unauthorized login attempts.
+* **RESPOND:** Creating an "Incident Response" checklist for when things go wrong.
+* **RECOVER:** Testing backups to ensure the business can be restored in under 4 hours.
 
 ## 5. RISK ASSESSMENT ANALYSIS
 
@@ -92,31 +82,38 @@ Based on my research, here is how a typical SME's threat landscape scores within
 ## 6. TECHNICAL IMPLEMENTATION
 
 ### 6.1 Python Risk Calculator (`risk_calculator.py`)
-I implemented the methodology above into a functional logic engine. 
-*   **Logic:** It uses a dictionary-based system to map numeric scores to human-readable risk levels.
-*   **Export:** It utilizes the `csv` library to allow SMEs to build a growing database of their security history, which is essential for future compliance audits.
+
+I implemented the methodology above into a functional logic engine.
+
+* **Logic:** It uses a dictionary-based system to map numeric scores to human-readable risk levels.
+* **Export:** It utilizes the `csv` library to allow SMEs to build a growing database of their security history, which is essential for future compliance audits.
 
 ### 6.2 Interactive Dashboard (`index.html`)
+
 The web component serves as the visualization layer. I used CSS Glassmorphism to create a professional, "Cyber-Ops" feel. The JavaScript logic provides real-time feedback as the user adjusts likelihood and impact sliders, making risk tangible to non-technical stakeholders.
 
 ## 7. CASE STUDY ANALYSIS
 
 ### 7.1 Case 1: The Small Accounting Firm (Password Theft)
-An employee clicked a fake "Microsoft Login" link. 
-*   **Analysis:** Without MFA, the risk score was **20 (Critical)**. 
-*   **Mitigation Performance:** By enforcing MFA, the Impact dropped from a **4** (Severe) to a **1** (Negligible), as the stolen password alone became useless to the attacker.
+
+An employee clicked a fake "Microsoft Login" link.
+
+* **Analysis:** Without MFA, the risk score was **20 (Critical)**.
+* **Mitigation Performance:** By enforcing MFA, the Impact dropped from a **4** (Severe) to a **1** (Negligible), as the stolen password alone became useless to the attacker.
 
 ### 7.2 Case 2: The Dental Clinic (Ransomware Attack)
+
 A "Supply Chain" attack via their IT provider.
-*   **Analysis:** Likelihood was **2**, but Impact was **5**.
-*   **Recovery Performance:** Because they followed my "Identify" and "Recover" steps, they had an isolated backup. Downtime was only 6 hours instead of a permanent business closure.
+
+* **Analysis:** Likelihood was **2**, but Impact was **5**.
+* **Recovery Performance:** Because they followed my "Identify" and "Recover" steps, they had an isolated backup. Downtime was only 6 hours instead of a permanent business closure.
 
 ## 8. DETAILED MITIGATION STRATEGIES
 
-1.  **Identity Control (MFA):** Every account must require a second factor. I recommend hardware keys or authenticator apps over SMS.
-2.  **Immutable Backups (The 3-2-1-1 Rule):** 3 copies of data, 2 media types, 1 offsite, and **1 air-gapped (offline)**.
-3.  **Vulnerability Management:** Transitioning all systems to "Auto-Update" to eliminate the window between a patch release and a hack.
-4.  **Security Culture:** Monthly 10-minute training sessions on how to spot the latest phishing trends.
+1. **Identity Control (MFA):** Every account must require a second factor. I recommend hardware keys or authenticator apps over SMS.
+2. **Immutable Backups (The 3-2-1-1 Rule):** 3 copies of data, 2 media types, 1 offsite, and **1 air-gapped (offline)**.
+3. **Vulnerability Management:** Transitioning all systems to "Auto-Update" to eliminate the window between a patch release and a hack.
+4. **Security Culture:** Monthly 10-minute training sessions on how to spot the latest phishing trends.
 
 ## 9. CONCLUSION & FUTURE SCOPE
 
