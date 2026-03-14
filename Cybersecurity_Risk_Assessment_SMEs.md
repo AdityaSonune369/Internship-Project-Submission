@@ -2,8 +2,7 @@
 
 **Project Title:** SME Cybersecurity Risk Assessment & Mitigation  
 **Project Category:** Minor Project 1  
-**Author:** Aditya Sonune  
-**Date:** March 14, 2026
+**Author:** Aditya Sonune
 
 ---
 
