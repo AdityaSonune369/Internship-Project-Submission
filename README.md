@@ -1,104 +1,85 @@
-# SME Cybersecurity Risk Assessment - Minor Project 1
+# PROJECT REPORT: CYBERSECURITY RISK ASSESSMENT FRAMEWORK FOR SMEs
 
-## 1. WHY THIS MATTERS
-
-Cybersecurity isn't just a "big tech" problem anymore. I chose to focus on Small and Medium Enterprises (SMEs) because they're often the easiest targets. They usually don't have a massive IT budget or a dedicated security team, which makes them sitting ducks for basic attacks.
-
-The idea behind this project was to create a simple, working way for a small business to figure out where they're vulnerable without needing to hire an expensive consultant.
-
-### 1.1 The Most Common Threats I Found
-
-During my research, I noticed that hackers don't usually use "movie-style" high-tech tricks on small businesses. Instead, they stick to what works:
-
-*   **Phishing:** Just sending fake emails to trick people into giving up passwords. It's the #1 way businesses get hacked because it’s easy to do.
-*   **Ransomware:** This is the nightmare scenario where all company files get locked up and the hackers demand money to release them.
-*   **Bad Habits/Insider Errors:** Sometimes it's just an employee using a weak password or someone accidentally deleting a sensitive database because they weren't trained.
-*   **Old Software:** Many small shops use "legacy" systems that haven't been updated in years. These have known holes that hackers scan for automatically.
+**Project Title:** Cybersecurity Risk Assessment Framework for Small and Medium Enterprises (SMEs)  
+**Project Category:** Minor Project 1  
+**Author:** Aditya Sonune  
 
 ---
 
-## 2. HOW I BUILT THE MODEL
+## ABSTRACT
 
-I looked at the NIST Cybersecurity Framework, which is the industry gold standard. It's way too complicated for a small shop to use as-is, so I stripped it down to the basics.
-
-### 2.1 The Simplified Process
-
-1.  **IDENTIFY:** Know what you have (servers, laptops, customer data).
-2.  **PROTECT:** Lock the doors (firewalls, passwords).
-3.  **DETECT:** Setting up alarms so you know if someone is inside your network.
-4.  **RESPOND:** Knowing exactly what to do the second you find a breach.
-5.  **RECOVER:** How to get back to work without losing everything.
-
-### 2.2 The Risk Score Formula
-
-To make this practical, I used a basic math formula:
-**Risk Score = How likely it is to happen × How bad it would be if it did**
-
-I used a scale of 1 to 5 for both.
-
-| Score | Likelihood (How often?) | Impact (How bad?) |
-| :--- | :--- | :--- |
-| **1** | Barely ever (once a year) | Not a big deal |
-| **2** | Might happen twice a year | Small headache (1hr downtime) |
-| **3** | Likely once a quarter | Actually hurts (data loss) |
-| **4** | Happens monthly | Serious trouble (fines/client loss) |
-| **5** | Happens all the time | Business-ending event |
+This project addresses the critical need for accessible cybersecurity risk management within Small and Medium Enterprises (SMEs). Given the limited IT budgets and technical resources typical of this sector, SMEs are frequently targeted by automated and opportunistic cyber-attacks. This report details the development of a simplified risk assessment model derived from the NIST Cybersecurity Framework. The model is supported by a Python-based automated risk calculator and an interactive web dashboard, enabling non-technical stakeholders to identify, score, and mitigate digital threats effectively.
 
 ---
 
-## 3. REAL EXAMPLES I TESTED
-
-I ran the numbers against two common situations:
-
-### 3.1 The Accountant Phishing Case
-A local accounting firm had an email password stolen.
-*   **The Score:** This was a **High Risk (16)** because it's so common.
-*   **The Fix:** Adding MFA (Multi-Factor Authentication) would have stopped the hacker, even with the right password.
-
-### 3.2 The Clinic Ransomware Case
-A dental clinic's IT provider got hacked, which spread to the clinic.
-*   **The Score:** This was a **Moderate Risk (10)**.
-*   **The Fix:** They had a "3-2-1" backup (offsite and offline), so they just wiped the PCs and restored everything for free.
+## TABLE OF CONTENTS
+1. [Introduction](#1-introduction)
+2. [Problem Statement](#2-problem-statement)
+3. [Objectives](#3-objectives)
+4. [Methodology](#4-methodology)
+5. [Implementation (Technical Tools)](#5-implementation-technical-tools)
+6. [Results & Case Studies](#6-results--case-studies)
+7. [Proposed Mitigation Strategies](#7-proposed-mitigation-strategies)
+8. [Conclusion](#8-conclusion)
 
 ---
 
-## 4. THE CALCULATOR TOOL (PYTHON)
+## 1. INTRODUCTION
 
-I didn't want this to just be a paper project. I wrote a Python script (`risk_calculator.py`) that actually does the math for you. You can feed it different threats, and it'll tell you if it's "Low", "Moderate", or "High" priority. It also creates a CSV file that you can show to a manager.
+Cybersecurity has transitioned from a supporting IT function to a fundamental business requirement. SMEs, while often overlooked in the media compared to large corporations, form the backbone of the global supply chain. This project provides a practical "first line of defense" framework that empowers small business owners to manage their security posture without requiring enterprise-level investments.
 
-**Run it with:** `python risk_calculator.py`
+## 2. PROBLEM STATEMENT
 
----
+A significant majority of SMEs operate under a "security through obscurity" fallacy, assuming they are too small to attract malicious attention. However, modern threats like ransomware and phishing are largely automated and target vulnerabilities, not specific company names. The primary barriers for SMEs are:
+*   **Complexity:** Existing global standards (NIST, ISO) are too resource-heavy for small teams.
+*   **Cost:** Professional security consulting is often prohibitively expensive.
+*   **Awareness:** Lack of a standardized way to quantify risk leads to reactive rather than proactive security spending.
 
-## 5. THE WEB DASHBOARD
+## 3. OBJECTIVES
 
-For people who don't like using a terminal, I built a web interface (`index.html`). It's basically a visual dashboard for the project. You can move sliders around to see how risk levels change in real-time. I spent extra time making sure the "Dark Mode" looks clean and professional.
+The core objectives of this minor project include:
+1.  **Framework Simplification:** Adapting global standards into a manageable 1-to-25 risk scoring system.
+2.  **Automation:** Developing a reproducible Python tool for consistent risk reporting.
+3.  **Visualization:** Creating a web-based dashboard to bridge the gap between technical risk and business decision-making.
+4.  **Strategic Recommendations:** Identifying high-impact, low-cost security controls.
 
-**Edit:** I had some issues with dropdown visibility in the first version, but I've updated the CSS so it works perfectly now.
+## 4. METHODOLOGY
 
----
+The project utilizes the **NIST Cybersecurity Framework (CSF)** as its foundation, focusing on the five core functions: Identify, Protect, Detect, Respond, and Recover.
 
-## 6. PROJECT FILES
+### 4.1 The Risk Calculation Model
+Risks are quantified using a 5×5 matrix where:
+> **Risk Score = Likelihood (1-5) × Impact (1-5)**
 
-| File | What it does |
-| :--- | :--- |
-| **`Cybersecurity_Risk_Assessment_SMEs.md`** | This main report. |
-| **`risk_calculator.py`** | The Python logic and reporting tool. |
-| **`index.html`** | The interactive dashboard front-end. |
+#### Scoring Matrix Overview:
+*   **1 - 6 (Low Risk):** Acceptable risk; maintain current controls.
+*   **8 - 12 (Moderate Risk):** Action required; plan mitigation within 90 days.
+*   **15 - 25 (High Risk):** Urgent; implement immediate controls to prevent business failure.
 
----
+## 5. IMPLEMENTATION (TECHNICAL TOOLS)
 
-## 7. TOP WAYS TO STAY SAFE
+### 5.1 Python Risk Calculator (`risk_calculator.py`)
+A command-line tool written in Python to ensure objective risk scoring.
+*   **Features:** User-friendly prompts, instant risk level categorization, and CSV data export for compliance record-keeping.
 
-Based on my research, most small businesses can be "safe enough" if they just do these four things:
+### 5.2 Interactive Web Dashboard (`index.html`)
+A front-end dashboard built with HTML5, CSS3, and JavaScript.
+*   **Features:** Real-time risk visualization, glassmorphism design for modern aesthetics, and responsive layout for mobile/tablet accessibility.
 
-1.  **Use MFA everywhere.** No exceptions.
-2.  **The 3-2-1 Backup.** 3 copies, 2 media types, 1 offsite.
-3.  **Patch your stuff.** Set everything to "Auto-Update".
-4.  **Train your team.** Most hacks start with a human error, not a computer error.
+## 6. RESULTS & CASE STUDIES
 
----
+The model was validated against two primary threat vectors:
+1.  **Phishing (Credential Theft):** Analysis proved that while the likelihood is "Likely" (4), the implementation of MFA reduces the impact from "Critical" (5) to "Minor" (2), effectively shifting the risk from High to Low.
+2.  **Supply Chain Ransomware:** Demonstrated that the "Recover" phase (3-2-1 backups) is the only definitive way to mitigate a "Critical" impact event when prevention fails.
 
-## 8. MY TAKEAWAY
+## 7. PROPOSED MITIGATION STRATEGIES
 
-The big lesson here is that you can't stop every hack. You have to assume you'll get hit eventually. The goal of this project was to show that by being smart with a simple risk matrix and basic tools, even a tiny business can be tougher to hack than a big bank.
+I recommend the following prioritized security roadmap for SMEs:
+*   **Identity Management:** Enforce Multi-Factor Authentication (MFA) across all cloud and local services.
+*   **Data Resiliency:** Implement the 3-2-1 backup rule (3 copies, 2 media, 1 offsite).
+*   **Cycle Management:** Activate automated patching for all operating systems and software.
+*   **Human Firewall:** Conduct quarterly security awareness training for all staff.
+
+## 8. CONCLUSION
+
+Cybersecurity is not an "all-or-nothing" game. Small businesses can achieve significant resilience by focusing on high-impact basics. This project shows that through structured risk assessment and simple automation tools, SMEs can effectively bridge the security gap and protect their long-term business continuity.
