@@ -1,0 +1,52 @@
+version: '3.8'
+
+# Zero Trust Architecture Simulation Sandbox
+# Components:
+# 1. Identity & Access Management (IAM): Keycloak (IdP)
+# 2. API Gateway/Reverse Proxy: Nginx (Enforces micro-segmentation and authentication)
+# 3. Protected Backend Application: A simple Node/Python echoing API (Restricted Access)
+
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:latest
+    container_name: zta-iam-keycloak
+    environment:
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=admin
+    command: start-dev
+    ports:
+      - "8080:8080"
+    networks:
+      - iam-net
+
+  api-gateway:
+    image: nginx:alpine
+    container_name: zta-api-proxy
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - "443:443" # Simulating TLS
+    depends_on:
+      - keycloak
+      - backend-api
+    networks:
+      - public-net
+      - backend-net
+      - iam-net
+
+  backend-api:
+    image: hashicorp/http-echo
+    container_name: zta-secure-api
+    command: "-text='Zero Trust Validated: Access to Backend Data Granted'"
+    expose:
+      - "5678"
+    networks:
+      - backend-net # Isolated from public-net
+
+networks:
+  public-net:
+    driver: bridge # External requests arrive here
+  iam-net:
+    driver: bridge # Dedicated network for Identity Provider
+  backend-net:
+    driver: bridge # Micro-segregated network, API Gateway bridges the gap
