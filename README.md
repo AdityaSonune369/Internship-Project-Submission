@@ -1,6 +1,6 @@
-# PROJECT REPORT: CYBERSECURITY RISK ASSESSMENT FRAMEWORK FOR SMEs
+# PROJECT REPORT: SME CYBERSECURITY RISK ASSESSMENT
 
-**Project Title:** Establishing a Practical Cybersecurity Risk Assessment and Mitigation Framework for Small and Medium Enterprises (SMEs)  
+**Project Title:** SME Cybersecurity Risk Assessment & Mitigation  
 **Project Category:** Minor Project 1  
 **Author:** Aditya Sonune  
 **Date:** March 14, 2026
